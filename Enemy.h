@@ -20,7 +20,7 @@ public:
 		float radius;
 	}object;
  
-	object enemy_[6];
+	object enemy_[20];
 	int x = 0;
 
 	
