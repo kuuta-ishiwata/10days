@@ -20,8 +20,11 @@ public:
 		float radius;
 	}object;
  
-	object enemy_;
+	object enemy_[6];
 	int x = 0;
+
+	
+
 public:
 	
 
@@ -32,9 +35,10 @@ public:
 	
 	void Draw(int x);
 	int isenemyFlag = false;
-
-
-
+	int isenemyFlag2 = false;
+	int isenemyFlag3 = false;
+	int isenemyFlag4 = false;
+	int isenemyFlag5 = false;
 	
 
 };

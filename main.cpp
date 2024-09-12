@@ -34,7 +34,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 		///
 		/// ↓更新処理ここから
 		///
-		player->Update(keys, preKeys);
+		
 		
 		//switch (scene)
 		//{
@@ -50,6 +50,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 		//	{
 		//		scene = 2;
 		//		
+		//		
 		//	}
 		//	break;
 		//case 2:
@@ -59,15 +60,8 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 		//
 		//	}
 		//	break;
-		//case 3:
-		//	if (keys[DIK_SPACE] && preKeys[DIK_SPACE] == 0)
-		//	{
-		//		scene = 0;
-		//
-		//	}
-		//	break;
 		//}
-
+		player->Update(keys, preKeys);
 		
 		///
 		/// ↑更新処理ここまで
@@ -75,21 +69,18 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 
 		///
 		/// ↓描画処理ここから
-		player->Draw();
+	
 
 		
-		//if (scene == 1)
-		//{
-		//	Novice::DrawBox(0, 0, 800, 800, 0.0f, RED, kFillModeSolid);
-		//}
-		//else if (scene == 2)
-		//{
-		//	
-		//}
-		//else if (scene == 3)
-		//{
-		//	Novice::DrawBox(0, 0, 800, 800, 0.0f, BLUE, kFillModeSolid);
-		//}
+		   //if (scene == 1)
+		   //{
+		   //	 Novice::DrawBox(0, 0, 800, 800, 0.0f, RED, kFillModeSolid);
+		   //}
+		   //else if (scene == 2)
+		   //{
+			//   
+		   //}
+		   player->Draw();
 		
 		///
 		/// ↑描画処理ここまで

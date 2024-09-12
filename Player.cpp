@@ -86,15 +86,52 @@ void Player::Update(char* keys, char* prekeys)
 
 			bulletAliveCount[i] += 1;
 
-			if (enemy.enemy_.position.X <= bulletposX[i] + bulletradius[i] &&
-				bulletposX[i] <= enemy.enemy_.position.X + enemy.enemy_.radius &&
-				enemy.enemy_.position.Y <= bulletposY[i] + bulletradius[i] &&
-				bulletposY[i] <= enemy.enemy_.position.Y + enemy.enemy_.radius)
+			if (enemy.enemy_[1].position.X <= bulletposX[i] + bulletradius[i] &&
+				bulletposX[i] <= enemy.enemy_[1].position.X + enemy.enemy_[1].radius &&
+				enemy.enemy_[1].position.Y <= bulletposY[i] + bulletradius[i] &&
+				bulletposY[i] <= enemy.enemy_[1].position.Y + enemy.enemy_[1].radius)
 
 			{
 				enemy.isenemyFlag = true;
 				Novice::ScreenPrintf(50, 300, "atari");
 
+			}
+			if (enemy.enemy_[2].position.X <= bulletposX[i] + bulletradius[i] &&
+				bulletposX[i] <= enemy.enemy_[2].position.X + enemy.enemy_[2].radius &&
+				enemy.enemy_[2].position.Y <= bulletposY[i] + bulletradius[i] &&
+				bulletposY[i] <= enemy.enemy_[2].position.Y + enemy.enemy_[2].radius)
+
+			{
+				enemy.isenemyFlag2 = true;
+				Novice::ScreenPrintf(50, 300, "atari");
+			}
+			if (enemy.enemy_[3].position.X <= bulletposX[i] + bulletradius[i] &&
+				bulletposX[i] <= enemy.enemy_[3].position.X + enemy.enemy_[3].radius &&
+				enemy.enemy_[3].position.Y <= bulletposY[i] + bulletradius[i] &&
+				bulletposY[i] <= enemy.enemy_[3].position.Y + enemy.enemy_[3].radius)
+
+			{
+				enemy.isenemyFlag3 = true;
+				Novice::ScreenPrintf(50, 300, "atari");
+			}
+			if (enemy.enemy_[4].position.X <= bulletposX[i] + bulletradius[i] &&
+				bulletposX[i] <= enemy.enemy_[4].position.X + enemy.enemy_[4].radius &&
+				enemy.enemy_[4].position.Y <= bulletposY[i] + bulletradius[i] &&
+				bulletposY[i] <= enemy.enemy_[4].position.Y + enemy.enemy_[4].radius)
+
+			{
+				enemy.isenemyFlag4 = true;
+				Novice::ScreenPrintf(50, 300, "atari");
+			}
+
+			if (enemy.enemy_[5].position.X <= bulletposX[i] + bulletradius[i] &&
+				bulletposX[i] <= enemy.enemy_[5].position.X + enemy.enemy_[5].radius &&
+				enemy.enemy_[5].position.Y <= bulletposY[i] + bulletradius[i] &&
+				bulletposY[i] <= enemy.enemy_[5].position.Y + enemy.enemy_[5].radius)
+
+			{
+				enemy.isenemyFlag5 = true;
+				Novice::ScreenPrintf(50, 300, "atari");
 			}
 		}
 
