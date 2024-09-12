@@ -5,30 +5,43 @@
 
 void Enemy::Initialize()
 {
-	for (int i = 0; i < 20; i++)
+	
+	enemy_ =
 	{
-		enemyposX[i] = 100;
-		enemyposY[i] = 220;
-		enemyradius[i] = 32;
-
-	}
+		{100,200},
+		{3,0},
+		32
+	};
+	
 
 }
 
 void Enemy::Update()
 {
+	
+	enemy_.position.X += enemy_.velocity.X;
+	
+	if (enemy_.position.X >= 500)
+	{
+		 enemy_.velocity.X *= -1;
+	}
+	if (enemy_.position.X <= 100)
+	{
+
+		enemy_.velocity.X *= -1;
+	}
+
 
 }
 
-void Enemy::Draw()
+void Enemy::Draw(int x)
 {
-	//for (int i = 0; i < 20; i++)
-	//{
-	//	if (isenemyFlag[i] == false)
-	//	{
-	//		Novice::DrawBox(enemyposX[i], enemyposY[i], enemyradius[i], enemyradius[i], 0.0f, BLUE, kFillModeSolid);
-	//	}
-	//}
+	
+	if (isenemyFlag== false)
+	{
+		Novice::DrawBox(enemy_.position.X, enemy_.position.Y, enemy_.radius, enemy_.radius, 0.0f, BLUE, kFillModeSolid);
+	}
+	
 
 }
 

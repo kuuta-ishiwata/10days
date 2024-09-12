@@ -24,12 +24,12 @@ void Player::Initialize()
 		bulletspeed[i] = 15;
 		bulletradius[i] = 16;
 	}
-
+	enemy.Initialize();
 }
 
 void Player::Update(char* keys, char* prekeys)
 {
-	
+	enemy.Update();
 #pragma region プレイヤーの動き
 	//右に動く
 	if (keys[DIK_A])
@@ -85,6 +85,17 @@ void Player::Update(char* keys, char* prekeys)
 			bulletposY[i] -= bulletspeed[i];
 
 			bulletAliveCount[i] += 1;
+
+			if (enemy.enemy_.position.X <= bulletposX[i] + bulletradius[i] &&
+				bulletposX[i] <= enemy.enemy_.position.X + enemy.enemy_.radius &&
+				enemy.enemy_.position.Y <= bulletposY[i] + bulletradius[i] &&
+				bulletposY[i] <= enemy.enemy_.position.Y + enemy.enemy_.radius)
+
+			{
+				enemy.isenemyFlag = true;
+				Novice::ScreenPrintf(50, 300, "atari");
+
+			}
 		}
 
 		//カウントを進めて400になると順次弾を消してリセット
@@ -98,19 +109,8 @@ void Player::Update(char* keys, char* prekeys)
 	
 
 	//弾と敵との判定
-	for (int i = 0; i < bulletnum; i++)
-	{
-		if (enemy.enemyposX[i] <= bulletposX[i] + bulletradius[i] &&
-			bulletposX[i] <= enemy.enemyposX[i] + enemy.enemyradius[i] &&
-			enemy.enemyposY[i] <= bulletposY[i] + bulletradius[i] &&
-			bulletposY[i] <= enemy.enemyposY[i] + enemy.enemyradius[i])
-
-		{
-			enemy.isenemyFlag[i] = true;
-			Novice::ScreenPrintf(50, 300, "atari");
-
-		}
-	}
+	
+	
 
 	//timer
 	timer++;
@@ -242,6 +242,8 @@ void Player::Update(char* keys, char* prekeys)
 
 void Player::Draw()
 {
+
+	enemy.Draw(enemy.x);
 
 	if (timerflag == false)
 	{

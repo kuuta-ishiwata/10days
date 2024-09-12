@@ -18,9 +18,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 
 	player->Initialize();
 
-	Enemy* enemy;
-	enemy = new Enemy();
-	enemy->Initialize();
+	
 
 	int scene = 0;
 
@@ -37,7 +35,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 		/// ↓更新処理ここから
 		///
 		player->Update(keys, preKeys);
-		enemy->Update();
+		
 		//switch (scene)
 		//{
 		//case 0:
@@ -79,7 +77,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 		/// ↓描画処理ここから
 		player->Draw();
 
-		enemy->Draw();
+		
 		//if (scene == 1)
 		//{
 		//	Novice::DrawBox(0, 0, 800, 800, 0.0f, RED, kFillModeSolid);

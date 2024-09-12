@@ -1,7 +1,8 @@
 #pragma once
 #include <Novice.h>
 #include "Vector2.h"
-
+#define _USE_MATH_DEFINES
+#include <math.h>
 class Enemy
 {
 public:
@@ -20,7 +21,7 @@ public:
 	}object;
  
 	object enemy_;
-	
+	int x = 0;
 public:
 	
 
@@ -29,13 +30,8 @@ public:
 	void Update();
 	
 	
-	void Draw();
-	const int enemynum = 20;
-	int enemyposX[20] = {0};
-	int enemyposY[20] = { 0 };
-	int enemyspeed[20] = { 0 };
-	int enemyradius[20];
-	int isenemyFlag[20] = {false};
+	void Draw(int x);
+	int isenemyFlag = false;
 
 
 
